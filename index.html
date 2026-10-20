@@ -1,0 +1,1042 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fcd5e2" />
+    <title>A Pink Dream of Love ♡ For My Baby Julie</title>
+
+    <!-- Romantic & Sophisticated Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Atmospheric Background Glow Orbs -->
+    <div class="ambient-glow glow-top-left" aria-hidden="true"></div>
+    <div class="ambient-glow glow-bottom-right" aria-hidden="true"></div>
+    <div class="ambient-glow glow-center" aria-hidden="true"></div>
+
+    <!-- Subtle Floating Rose Petals Layer -->
+    <div class="petals-container" id="petalsContainer" aria-hidden="true"></div>
+
+    <!-- Interactive Click Hearts & Sparkles Layer -->
+    <div class="particles-layer" id="particlesLayer" aria-hidden="true"></div>
+
+    <!-- Toast Notification Rack -->
+    <div
+      class="toast-rack"
+      id="toastRack"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+    <!-- =====================================================================
+       1. OPENING SCREEN: OUR SPECIAL SECRET CODE 🔐
+       ===================================================================== -->
+    <section class="passcode-wrapper" id="passcodeWrapper">
+      <div class="passcode-card">
+        <div class="secret-badge"><span>✨</span> A PRIVATE LOVE DIARY</div>
+
+        <!-- Glowing Heart & Rose Ribbon Emblem SVG -->
+        <svg
+          class="secret-emblem-svg"
+          viewBox="0 0 100 100"
+          aria-label="Glowing heart emblem"
+        >
+          <defs>
+            <linearGradient
+              id="emblemGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="#ff6b8b" />
+              <stop offset="50%" stop-color="#e03d67" />
+              <stop offset="100%" stop-color="#8c1d38" />
+            </linearGradient>
+          </defs>
+          <!-- Soft Outer Glow -->
+          <circle
+            cx="50"
+            cy="50"
+            r="42"
+            fill="none"
+            stroke="#fcd5e2"
+            stroke-width="2"
+            stroke-dasharray="4,3"
+          />
+          <!-- Main Elegant Heart -->
+          <path
+            d="M 50,30 C 44,18 28,18 22,30 C 14,46 32,64 50,78 C 68,64 86,46 78,30 C 72,18 56,18 50,30 Z"
+            fill="url(#emblemGradient)"
+          />
+          <!-- Subtle Inner Highlight -->
+          <path
+            d="M 32,32 C 34,26 42,26 45,32"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            opacity="0.65"
+          />
+          <!-- Little Sparkles -->
+          <circle cx="26" cy="24" r="2" fill="#ffccd7" />
+          <circle cx="74" cy="24" r="2" fill="#ffccd7" />
+        </svg>
+
+        <h1 class="passcode-title">A Little Secret for You, My Love</h1>
+
+        <!-- Four Password Boxes with Animated Heart Placeholders -->
+        <div
+          class="pin-row"
+          id="pinDisplayRow"
+          aria-label="Four digit passcode display"
+        >
+          <div class="pin-cell" id="pinCell0">
+            <span class="pin-placeholder">♡</span>
+          </div>
+          <div class="pin-cell" id="pinCell1">
+            <span class="pin-placeholder">♡</span>
+          </div>
+          <div class="pin-cell" id="pinCell2">
+            <span class="pin-placeholder">♡</span>
+          </div>
+          <div class="pin-cell" id="pinCell3">
+            <span class="pin-placeholder">♡</span>
+          </div>
+        </div>
+
+        <!-- Exact Required Hint -->
+        <p class="passcode-hint">
+          Hint: The day you said YES when I asked,
+          <strong>'I WANT TO COURT YOU.'</strong>
+        </p>
+
+        <!-- Glossy Pink Numeric Keypad -->
+        <div class="keypad-grid" role="group" aria-label="Keypad">
+          <button class="key-btn" data-key="1" aria-label="1">1</button>
+          <button class="key-btn" data-key="2" aria-label="2">2</button>
+          <button class="key-btn" data-key="3" aria-label="3">3</button>
+
+          <button class="key-btn" data-key="4" aria-label="4">4</button>
+          <button class="key-btn" data-key="5" aria-label="5">5</button>
+          <button class="key-btn" data-key="6" aria-label="6">6</button>
+
+          <button class="key-btn" data-key="7" aria-label="7">7</button>
+          <button class="key-btn" data-key="8" aria-label="8">8</button>
+          <button class="key-btn" data-key="9" aria-label="9">9</button>
+
+          <button class="key-btn key-dot" data-key="." aria-label="Sparkle dot">
+            ♥
+          </button>
+          <button class="key-btn" data-key="0" aria-label="0">0</button>
+          <button class="key-btn key-del" data-key="DEL" aria-label="Delete">
+            DEL
+          </button>
+        </div>
+
+        <p class="passcode-subnote">
+          You may also type with your physical keyboard (0–9, Backspace, Enter)
+        </p>
+      </div>
+    </section>
+
+    <!-- Passcode Popups Overlay -->
+    <div class="modal-overlay" id="passcodeModalOverlay">
+      <!-- WRONG PASSCODE POPUP -->
+      <div
+        class="elegant-modal-card"
+        id="wrongPasscodeModal"
+        style="display: none"
+      >
+        <div class="modal-icon-wrap">
+          <svg viewBox="0 0 100 100" width="100%" height="100%">
+            <path
+              d="M 50,32 C 44,20 28,20 22,32 C 14,48 32,66 50,80 C 68,66 86,48 78,32 C 72,20 56,20 50,32 Z"
+              fill="#fcd5e2"
+              stroke="#b85a75"
+              stroke-width="2.5"
+            />
+            <!-- Gentle sad eyes on heart -->
+            <ellipse cx="40" cy="42" rx="3" ry="4" fill="#6b1d33" />
+            <ellipse cx="60" cy="42" rx="3" ry="4" fill="#6b1d33" />
+            <path
+              d="M 44,55 Q 50,50 56,55"
+              fill="none"
+              stroke="#6b1d33"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <!-- Tear drop sparkle -->
+            <circle cx="37" cy="49" r="2.5" fill="#70b8ff" />
+          </svg>
+        </div>
+        <h2 class="modal-heading">Oops, Wrong Passcode! ♡</h2>
+        <p class="modal-desc">
+          "Hehe, not quite, baby! Try again. Your little surprise is waiting for
+          you. 💗"
+        </p>
+        <button class="btn-romantic-primary" id="btnRetryPasscode">
+          Try Again ♡
+        </button>
+      </div>
+
+      <!-- ACCESS GRANTED POPUP -->
+      <div
+        class="elegant-modal-card"
+        id="correctPasscodeModal"
+        style="display: none"
+      >
+        <div class="modal-icon-wrap">
+          <svg viewBox="0 0 100 100" width="100%" height="100%">
+            <path
+              d="M 50,28 C 43,15 26,15 20,28 C 11,46 32,66 50,82 C 68,66 89,46 80,28 C 74,15 57,15 50,28 Z"
+              fill="url(#emblemGradient)"
+            />
+            <text
+              x="50"
+              y="55"
+              font-family="'Playfair Display', serif"
+              font-size="20"
+              fill="#ffffff"
+              text-anchor="middle"
+              font-weight="700"
+            >
+              YES
+            </text>
+            <text x="24" y="24" font-size="14" fill="#ffccd7">✦</text>
+            <text x="76" y="24" font-size="14" fill="#ffccd7">✦</text>
+          </svg>
+        </div>
+        <h2 class="modal-heading">Access Granted, My Love!</h2>
+        <p class="modal-desc">
+          "You found our special little secret, Baby Julie! Now come and see the
+          little world I made just for you. ♡"
+        </p>
+        <button class="btn-romantic-primary" id="btnProceedPasscode">
+          Proceed to My World ➔
+        </button>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+       MAIN ROMANTIC WEBSITE (REVEALED AFTER CODE UNLOCKED)
+       ===================================================================== -->
+    <main class="main-wrapper" id="mainSiteWrapper" style="display: none">
+      <!-- Top Sticky Navigation Bar -->
+      <header class="top-glass-nav">
+        <div class="brand-label">
+          <svg class="brand-heart-icon" viewBox="0 0 24 24">
+            <path
+              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+            />
+          </svg>
+          <span>Julie ♡ My Love</span>
+        </div>
+
+        <div class="nav-actions">
+          <button
+            class="nav-chip"
+            id="heartCounterChip"
+            title="Click to send love to Julie!"
+          >
+            <span>💕 Hearts:</span> <span id="heartCounterDisplay">0</span>
+          </button>
+          <button class="nav-chip" id="soundToggleBtn">
+            <span>🔊</span> Sound ON
+          </button>
+          <button
+            class="nav-chip"
+            id="btnRelock"
+            title="Re-lock with secret passcode"
+          >
+            <span>🔒</span> Lock
+          </button>
+        </div>
+      </header>
+
+      <!-- SECTION 1: WELCOME SCREEN (FOR MY BABY JULIE, WITH ALL MY HEART) -->
+      <section class="romantic-card-section hero-section" id="welcomeSection">
+        <!-- Decorative Rose Botanical Corner -->
+        <svg class="floral-corner" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M 0,0 Q 50,20 80,80 Q 20,50 0,0 Z" fill="#e03d67" />
+          <path d="M 20,0 Q 60,30 100,100 Q 30,60 20,0 Z" fill="#fcd5e2" />
+        </svg>
+
+        <div class="section-tag"><span>🌷</span> A DIGITAL LOVE GIFT</div>
+
+        <div class="hero-heart-stage">
+          <!-- Elegant Layered Blooming Heart SVG -->
+          <svg class="hero-heart-svg" viewBox="0 0 140 130">
+            <defs>
+              <linearGradient
+                id="heroGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop offset="0%" stop-color="#ff7597" />
+                <stop offset="50%" stop-color="#e03d67" />
+                <stop offset="100%" stop-color="#7a1d35" />
+              </linearGradient>
+            </defs>
+            <!-- Soft Background Halo -->
+            <path
+              d="M 70,30 C 60,12 36,12 26,30 C 14,54 42,78 70,98 C 98,78 126,54 114,30 C 104,12 80,12 70,30 Z"
+              fill="rgba(252, 213, 226, 0.45)"
+              transform="scale(1.15) translate(-9, -9)"
+            />
+            <!-- Main Heart -->
+            <path
+              d="M 70,30 C 60,12 36,12 26,30 C 14,54 42,78 70,98 C 98,78 126,54 114,30 C 104,12 80,12 70,30 Z"
+              fill="url(#heroGradient)"
+            />
+            <path
+              d="M 40,32 C 44,22 56,22 62,32"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="3"
+              stroke-linecap="round"
+              opacity="0.6"
+            />
+            <!-- Sparkles -->
+            <text x="16" y="32" font-size="16" fill="#f7a8c4">✦</text>
+            <text x="115" y="32" font-size="16" fill="#f7a8c4">✦</text>
+            <text
+              x="70"
+              y="118"
+              font-size="14"
+              fill="#e03d67"
+              text-anchor="middle"
+            >
+              ♡
+            </text>
+          </svg>
+        </div>
+
+        <h1 class="section-title">For My Baby Julie, With All My Heart</h1>
+        <p class="hero-subtitle-script">
+          "A little digital world filled with my love, my promises, and the
+          sweetest memories of us."
+        </p>
+
+        <div class="hero-letter-preview">
+          <p>
+            "Hi, my baby Julie. I made this little website because sometimes my
+            heart has so many things it wants to tell you. I wanted to create
+            something special that you can open whenever you want to smile, feel
+            appreciated, or remember how much you mean to me. Every little
+            detail is made with love, and every message comes straight from my
+            heart. I hope this reminds you that you are someone truly precious
+            to me."
+          </p>
+        </div>
+
+        <!-- Five Interactive Navigation Buttons -->
+        <nav class="hero-buttons-nav" aria-label="Main Sections Navigation">
+          <a href="#letterSection" class="hero-nav-btn"
+            >💌 Open My Love Letter</a
+          >
+          <a href="#beginningSection" class="hero-nav-btn">📖 Our Beginning</a>
+          <a href="#reasonsSection" class="hero-nav-btn"
+            >🌷 Little Things I Love About You</a
+          >
+          <a href="#surpriseSection" class="hero-nav-btn"
+            >🎁 A Surprise for My Baby</a
+          >
+          <a href="#musicSection" class="hero-nav-btn">🎵 Our Love Song</a>
+        </nav>
+      </section>
+
+      <!-- SECTION 2: OUR BEGINNING: THE DAY YOU SAID YES 💞 -->
+      <section
+        class="romantic-card-section beginning-section"
+        id="beginningSection"
+      >
+        <div class="section-tag"><span>💞</span> THE SACRED MOMENT</div>
+
+        <h2 class="section-title">The Day Our Story Began</h2>
+        <p class="section-subtitle">
+          The memory of when I took a step of faith, asked you into my life, and
+          you gave me the sweetest chance.
+        </p>
+
+        <!-- Question & Glowing Answer Box -->
+        <div class="question-reveal-card">
+          <div class="court-question-tag">THE QUESTION I ASKED YOU</div>
+          <div class="court-question-quote">"I WANT TO COURT YOU."</div>
+
+          <!-- Glowing Animated Answer -->
+          <div class="answer-badge-container" id="answerBadge">
+            <span class="answer-label">AND YOU ANSWERED</span>
+            <span class="answer-glow-text">"YES. ♡"</span>
+          </div>
+        </div>
+
+        <!-- The Emotional Narrative Timeline -->
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+
+          <div class="timeline-step">
+            <div class="timeline-node"></div>
+            <div class="timeline-box">
+              <h3 class="timeline-box-title">Our First Little YES</h3>
+              <p class="timeline-box-text">
+                "Baby Julie, do you remember when I asked you if I could court
+                you? I remember that moment because it became such a special
+                part of our story. When you said YES, you gave me the chance to
+                get closer to you, know you more deeply, and show you how
+                sincere my feelings are."
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-node"></div>
+            <div class="timeline-box">
+              <h3 class="timeline-box-title">A Meaningful Beginning</h3>
+              <p class="timeline-box-text">
+                "It might have seemed like a simple question and a simple
+                answer, but to me, it meant so much. It was the beginning of
+                something I wanted to treasure, something I hoped would grow
+                into a beautiful story between us."
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-node"></div>
+            <div class="timeline-box">
+              <h3 class="timeline-box-title">My Heartfelt Gratitude</h3>
+              <p class="timeline-box-text">
+                "Thank you for giving me that chance, my love. I will never take
+                it for granted."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="beginning-actions">
+          <button class="btn-romantic-primary" id="btnReliveMoment">
+            <span>💖</span> Relive That Moment ♡
+          </button>
+          <p class="final-memory-note">
+            "And that, my baby, is one of the little moments I will always keep
+            in my heart."
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 3: INTERACTIVE LOVE LETTER 💌 -->
+      <section class="romantic-card-section letter-section" id="letterSection">
+        <div class="section-tag"><span>💌</span> UNSPOKEN THOUGHTS</div>
+
+        <h2 class="section-title">A Letter From My Heart to Yours</h2>
+        <p class="section-subtitle">
+          Written with sincere devotion, patience, and love. Tap the wax seal to
+          unfold and read.
+        </p>
+
+        <!-- Large Elegant Envelope -->
+        <div
+          class="envelope-interactive"
+          id="envelopeInteractive"
+          role="button"
+          tabindex="0"
+          aria-label="Open the love letter"
+        >
+          <div class="envelope-chassis">
+            <div class="envelope-pocket-left"></div>
+            <div class="envelope-pocket-right"></div>
+            <div class="envelope-pocket-bottom"></div>
+            <div class="envelope-flap" id="envelopeFlap"></div>
+            <div class="envelope-heart-seal">♡</div>
+            <div class="envelope-caption">Tap to Unfold with Love 💌</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Full Screen Letter Dialog Modal -->
+      <div class="letter-dialog-overlay" id="letterDialogOverlay">
+        <article class="letter-document">
+          <header class="letter-top-bar">
+            <div class="letter-bar-heading">
+              <span>💌</span> For My Sweetest Baby Julie
+            </div>
+            <button
+              class="btn-close-letter"
+              id="btnCloseLetter"
+              aria-label="Close letter"
+            >
+              &times;
+            </button>
+          </header>
+
+          <div class="letter-body-scroll">
+            <h3 class="letter-salutation">
+              My baby Julie, my love, my sweetest girl... ♡
+            </h3>
+
+            <!-- Part 1: Affection -->
+            <p class="letter-p">
+              I hope whenever you read these words, you can feel how softly and
+              deeply you are held in my thoughts. You are so special to me,
+              baby. In a world full of noise, finding you has given my heart a
+              place of peace, warmth, and pure joy.
+            </p>
+
+            <!-- Part 2: Appreciation -->
+            <p class="letter-p">
+              Thank you from the bottom of my heart for your time, your
+              kindness, your gentleness, and all the quiet, sweet things you do
+              every day. The way you listen, the sound of your laugh, your
+              sleepy voice in the morning, and the simple moments we share —
+              they might seem ordinary to the world, but to me, they are the
+              most meaningful memories I own.
+            </p>
+
+            <!-- Part 3: Reassurance -->
+            <p class="letter-p">
+              I want you to always know that with me, you are safe. You do not
+              ever have to pretend to be strong or perfect to be loved by me. I
+              love the real you, baby. I want to keep learning about you,
+              understanding your feelings, supporting every dream God places in
+              your soul, and respecting your beautiful individuality through
+              every season of life.
+            </p>
+
+            <!-- Part 4: Faith (1 Corinthians 13:4-7) -->
+            <div class="scripture-card">
+              <p class="scripture-verse">
+                "Love is patient, love is kind. It does not envy, it does not
+                boast, it is not proud. It does not dishonor others, it is not
+                self-seeking, it is not easily angered, it keeps no record of
+                wrongs. Love does not delight in evil but rejoices with the
+                truth. It always protects, always trusts, always hopes, always
+                perseveres."
+              </p>
+              <span class="scripture-ref">1 Corinthians 13:4–7</span>
+            </div>
+
+            <p class="letter-p">
+              I thank God every single day for letting our paths cross. I pray
+              that under His faithful guidance, what we are building together
+              will grow through patience, gentle kindness, quick forgiveness,
+              and unconditional grace.
+            </p>
+
+            <!-- Part 5: Promise & Verbatim Ending Quote -->
+            <p class="letter-p">
+              I promise to keep choosing you, appreciating you, respecting your
+              heart, and making an honest, devoted effort to love you better
+              with each passing sunrise.
+            </p>
+
+            <p class="letter-ending-quote">
+              "My baby Julie, when I asked if I could court you and you said
+              YES, I never knew how many beautiful feelings and memories could
+              begin with that one little answer. But I am so thankful that I
+              took that chance and that you gave me yours. I want to keep
+              knowing you, keep making you smile, keep praying for you, and keep
+              showing you that my intentions are sincere. I cannot promise that
+              every day will be perfect, but I can promise to keep trying, to
+              listen, to understand, and to treat your heart with care. If God
+              allows us to share many more days together, I hope I can keep
+              making you feel special in the little ways that matter most. I
+              love you so much, my Baby Julie, and I want to keep choosing you
+              with a sincere heart, today and in all the days ahead. ♡"
+            </p>
+
+            <p class="letter-sign-off">
+              Forever yours with all my devotion,<br />
+              Your boy who will always cherish you ♡
+            </p>
+          </div>
+
+          <footer class="letter-footer-bar">
+            <button class="btn-romantic-primary" id="btnSealLove">
+              Seal My Love 💗
+            </button>
+          </footer>
+        </article>
+      </div>
+
+      <!-- SECTION 4: LITTLE THINGS I LOVE ABOUT YOU 🌷 -->
+      <section
+        class="romantic-card-section reasons-section"
+        id="reasonsSection"
+      >
+        <div class="section-tag"><span>🌷</span> PIECES OF YOU</div>
+
+        <h2 class="section-title">Little Things I Love About You</h2>
+        <p class="section-subtitle">
+          Tap on any card to flip it over and read what makes you so
+          unforgettable to me.
+        </p>
+
+        <div class="reasons-grid">
+          <!-- Card 1: Your Beautiful Smile -->
+          <div
+            class="reason-card"
+            tabindex="0"
+            role="button"
+            aria-label="Flip card: Your beautiful smile"
+          >
+            <div class="reason-card-inner">
+              <div class="reason-card-front">
+                <svg class="reason-card-front-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+                <h3 class="reason-card-front-title">Your Beautiful Smile</h3>
+                <span class="reason-card-tap-hint">Tap to Reveal ♡</span>
+              </div>
+              <div class="reason-card-back">
+                <p class="reason-card-back-text">
+                  "Your smile is like sudden sunshine on an overcast day.
+                  Whenever you smile, it melts away any stress I have and
+                  reminds me how lucky I am to see you happy."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: The Sound of Your Voice -->
+          <div
+            class="reason-card"
+            tabindex="0"
+            role="button"
+            aria-label="Flip card: The sound of your voice"
+          >
+            <div class="reason-card-inner">
+              <div class="reason-card-front">
+                <svg class="reason-card-front-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"
+                  />
+                </svg>
+                <h3 class="reason-card-front-title">The Sound of Your Voice</h3>
+                <span class="reason-card-tap-hint">Tap to Reveal ♡</span>
+              </div>
+              <div class="reason-card-back">
+                <p class="reason-card-back-text">
+                  "Whether you're telling me about your day, laughing at
+                  something silly, or sounding sleepy and soft, hearing your
+                  voice instantly calms my heart and brings me peace."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Your Kindness -->
+          <div
+            class="reason-card"
+            tabindex="0"
+            role="button"
+            aria-label="Flip card: Your kindness"
+          >
+            <div class="reason-card-inner">
+              <div class="reason-card-front">
+                <svg class="reason-card-front-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
+                  />
+                </svg>
+                <h3 class="reason-card-front-title">Your Kindness</h3>
+                <span class="reason-card-tap-hint">Tap to Reveal ♡</span>
+              </div>
+              <div class="reason-card-back">
+                <p class="reason-card-back-text">
+                  "The gentle, considerate way you care for others and the
+                  warmth in your actions. You have such a pure, rare heart, and
+                  it inspires me to be a better man every day."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Making Ordinary Moments Special -->
+          <div
+            class="reason-card"
+            tabindex="0"
+            role="button"
+            aria-label="Flip card: Making ordinary moments special"
+          >
+            <div class="reason-card-inner">
+              <div class="reason-card-front">
+                <svg class="reason-card-front-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                  />
+                </svg>
+                <h3 class="reason-card-front-title">Ordinary Moments</h3>
+                <span class="reason-card-tap-hint">Tap to Reveal ♡</span>
+              </div>
+              <div class="reason-card-back">
+                <p class="reason-card-back-text">
+                  "Even the simplest messages, quiet conversations, or shared
+                  ordinary seconds become memories I cherish simply because I
+                  get to share them with you."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Your Faith & Heart for God -->
+          <div
+            class="reason-card"
+            tabindex="0"
+            role="button"
+            aria-label="Flip card: Your faith and heart for God"
+          >
+            <div class="reason-card-inner">
+              <div class="reason-card-front">
+                <svg class="reason-card-front-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.05.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.01-4.09l-2.45-1.45C16.32 17.84 14.31 19 12 19z"
+                  />
+                </svg>
+                <h3 class="reason-card-front-title">Your Faith in God</h3>
+                <span class="reason-card-tap-hint">Tap to Reveal ♡</span>
+              </div>
+              <div class="reason-card-back">
+                <p class="reason-card-back-text">
+                  "The way you love and worship God is one of the most
+                  attractive things about you. Seeing your faith encourages my
+                  own walk and deepens my respect for who you are."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: The Little Things You Do -->
+          <div
+            class="reason-card"
+            tabindex="0"
+            role="button"
+            aria-label="Flip card: The little things you do"
+          >
+            <div class="reason-card-inner">
+              <div class="reason-card-front">
+                <svg class="reason-card-front-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2z"
+                  />
+                </svg>
+                <h3 class="reason-card-front-title">The Little Things</h3>
+                <span class="reason-card-tap-hint">Tap to Reveal ♡</span>
+              </div>
+              <div class="reason-card-back">
+                <p class="reason-card-back-text">
+                  "The sweet gestures, the random check-ins, the attention you
+                  pay to details without being asked. I notice every single one,
+                  baby, and I appreciate you endlessly."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: The Happiness of Being With You -->
+          <div
+            class="reason-card"
+            tabindex="0"
+            role="button"
+            aria-label="Flip card: The happiness of being with you"
+          >
+            <div class="reason-card-inner">
+              <div class="reason-card-front">
+                <svg class="reason-card-front-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"
+                  />
+                </svg>
+                <h3 class="reason-card-front-title">Being With You</h3>
+                <span class="reason-card-tap-hint">Tap to Reveal ♡</span>
+              </div>
+              <div class="reason-card-back">
+                <p class="reason-card-back-text">
+                  "Being with you feels like arriving home after a long journey.
+                  In your presence, my heart finds rest, joy, and a comfort I
+                  can't find anywhere else."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8: The Beautiful Person You Are Becoming -->
+          <div
+            class="reason-card"
+            tabindex="0"
+            role="button"
+            aria-label="Flip card: The beautiful person you are becoming"
+          >
+            <div class="reason-card-inner">
+              <div class="reason-card-front">
+                <svg class="reason-card-front-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"
+                  />
+                </svg>
+                <h3 class="reason-card-front-title">Who You Are</h3>
+                <span class="reason-card-tap-hint">Tap to Reveal ♡</span>
+              </div>
+              <div class="reason-card-back">
+                <p class="reason-card-back-text">
+                  "I love watching you grow, pursue your goals, and bloom into
+                  the incredible woman God created you to be. It is an honor to
+                  walk beside you and cheer for you."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: A SURPRISE FOR MY BABY 🎁 -->
+      <section
+        class="romantic-card-section surprise-section"
+        id="surpriseSection"
+      >
+        <div class="section-tag"><span>🎁</span> SPECIAL SURPRISE</div>
+
+        <h2 class="section-title">A Surprise for My Baby</h2>
+        <p class="section-subtitle">
+          I prepared a quiet collection of sweet reminders just for you. Tap the
+          glowing heart below whenever you need reassurance.
+        </p>
+
+        <button
+          class="surprise-box-button"
+          id="surpriseTriggerBtn"
+          aria-label="Open secret surprise messages"
+        >
+          <svg class="surprise-heart-graphic" viewBox="0 0 100 100">
+            <defs>
+              <radialGradient id="boxHeartGrad" cx="50%" cy="40%" r="55%">
+                <stop offset="0%" stop-color="#ff7597" />
+                <stop offset="60%" stop-color="#e03d67" />
+                <stop offset="100%" stop-color="#6b1d33" />
+              </radialGradient>
+            </defs>
+            <path
+              d="M 50,28 C 43,14 26,14 20,28 C 10,48 32,70 50,86 C 68,70 90,48 80,28 C 74,14 57,14 50,28 Z"
+              fill="url(#boxHeartGrad)"
+            />
+            <circle cx="36" cy="32" r="3" fill="#ffffff" opacity="0.6" />
+            <text
+              x="50"
+              y="58"
+              font-size="24"
+              fill="#ffffff"
+              text-anchor="middle"
+            >
+              🎁
+            </text>
+          </svg>
+          <span class="surprise-btn-label">Tap to Open Your Surprise ♡</span>
+        </button>
+      </section>
+
+      <!-- Sequential Surprise Modal -->
+      <div class="surprise-dialog-overlay" id="surpriseDialogOverlay">
+        <div class="surprise-card-content">
+          <button
+            class="btn-close-letter"
+            id="btnCloseSurprise"
+            style="position: absolute; top: 18px; right: 24px"
+            aria-label="Close surprise"
+          >
+            &times;
+          </button>
+
+          <div class="surprise-step-meter">
+            <div class="surprise-meter-fill" id="surpriseMeterFill"></div>
+          </div>
+
+          <svg class="surprise-icon-top" viewBox="0 0 100 100">
+            <path
+              d="M 50,28 C 43,14 26,14 20,28 C 10,48 32,70 50,86 C 68,70 90,48 80,28 C 74,14 57,14 50,28 Z"
+              fill="#e03d67"
+            />
+            <text
+              x="50"
+              y="58"
+              font-size="20"
+              fill="#ffffff"
+              text-anchor="middle"
+            >
+              ♥
+            </text>
+          </svg>
+
+          <div class="surprise-quote-box" id="surpriseQuoteBox">
+            <!-- Dynamically populated via JS -->
+          </div>
+
+          <button class="btn-romantic-primary" id="btnNextSurprise">
+            One More Message ♡
+          </button>
+        </div>
+      </div>
+
+      <!-- SECTION 6: HIDDEN MESSAGES FROM MY HEART 💝 -->
+      <section
+        class="romantic-card-section secret-notes-section"
+        id="secretSection"
+      >
+        <div class="section-tag"><span>💝</span> QUIET WHISPERS</div>
+
+        <h2 class="section-title">Hidden Messages From My Heart</h2>
+        <p class="section-subtitle">
+          There are some things my heart whispers when the world is quiet.
+        </p>
+
+        <button class="whisper-button" id="whisperBtn">
+          <span>💌</span> Psst... There's Something Else ♡
+        </button>
+
+        <!-- Interactive Beating Heart Widget -->
+        <div
+          class="beating-heart-widget"
+          id="beatingHeartWidget"
+          title="Click to hear my heart beat for you"
+        >
+          <svg viewBox="0 0 100 100" width="100%" height="100%">
+            <path
+              d="M 50,28 C 43,14 26,14 20,28 C 10,48 32,70 50,86 C 68,70 90,48 80,28 C 74,14 57,14 50,28 Z"
+              fill="#e03d67"
+            />
+          </svg>
+        </div>
+
+        <!-- Typewriter Note Box -->
+        <div class="hidden-note-display" id="hiddenNoteDisplay">
+          <div class="typewriter-content" id="typewriterContent"></div>
+          <button
+            class="btn-romantic-primary"
+            id="btnNextSecret"
+            style="margin-top: 18px; padding: 9px 24px; font-size: 0.92rem"
+          >
+            Another Secret Whisper 💌
+          </button>
+        </div>
+      </section>
+
+      <!-- SECTION 7: ROMANTIC MUSIC PLAYER 🎵 -->
+      <section
+        class="romantic-card-section music-box-section"
+        id="musicSection"
+      >
+        <div class="section-tag"><span>🎵</span> OUR SOUNDTRACK</div>
+
+        <h2 class="section-title">Our Love Song</h2>
+        <p class="section-subtitle">
+          A sweet melody for you to listen to as you wander through this little
+          world.
+        </p>
+
+        <div class="music-box-card">
+          <!-- Pure CSS Spinning Vinyl Record -->
+          <div class="vinyl-deck">
+            <div class="vinyl-disc-plate" id="vinylDiscPlate">
+              <div class="vinyl-core-label">
+                <span>J ♡ J</span>
+                <div class="vinyl-spindle-hole"></div>
+              </div>
+            </div>
+            <div
+              class="floating-notes-box"
+              id="floatingNotesBox"
+              style="display: none"
+            >
+              <span class="floating-note-item fn-1">♪</span>
+              <span class="floating-note-item fn-2">♫</span>
+              <span class="floating-note-item fn-3">♥</span>
+            </div>
+          </div>
+
+          <h3 class="music-song-title">Our Love Song ♡</h3>
+          <p class="music-artist-name">Dedicated to Baby Julie</p>
+
+          <!-- Seek Progress Bar -->
+          <div class="music-seek-bar-wrap">
+            <div class="music-seek-bar" id="musicSeekBar">
+              <div class="music-seek-progress" id="musicSeekProgress"></div>
+            </div>
+            <div class="music-time-meta">
+              <span id="musicCurrentTime">0:00</span>
+              <span id="musicTotalTime">--:--</span>
+            </div>
+          </div>
+
+          <button
+            class="music-btn-play"
+            id="btnMusicPlay"
+            aria-label="Play or pause music"
+          >
+            <span id="musicPlayIcon">▶</span>
+          </button>
+
+          <div class="volume-row">
+            <span>🔈</span>
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.75"
+              class="volume-input"
+              id="musicVolumeSlider"
+              aria-label="Volume slider"
+            />
+            <span>🔊</span>
+          </div>
+        </div>
+
+        <!-- Local Audio Element -->
+        <audio
+          id="localMusicAudio"
+          src="music.mp3"
+          preload="metadata"
+          loop
+        ></audio>
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="footer-heart-emblem">♡</div>
+        <p>
+          Crafted with endless devotion, prayer, and pure love for my Baby
+          Julie.
+        </p>
+        <p style="margin-top: 6px; font-size: 0.9rem; color: var(--dusty-rose)">
+          "I will keep choosing you with a sincere heart, today and in all the
+          days ahead." 🌸
+        </p>
+      </footer>
+
+      <!-- Floating Back-to-Top Button -->
+      <a
+        href="#welcomeSection"
+        class="btn-float-home"
+        title="Return to top"
+        aria-label="Return to top"
+      >
+        <span>↑</span>
+      </a>
+    </main>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+  </body>
+</html>
